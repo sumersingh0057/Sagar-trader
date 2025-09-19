@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: url("background.png") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      margin-top: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: black;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 25px;
+      margin: 15px 0;
+      border-radius: 50px;
+      text-decoration: none;
+      position: relative;
+      animation: pulse 1.5s infinite;
+    }
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 60px;
+      background: rgba(255, 223, 0, 0.5);
+      z-index: -1;
+      filter: blur(20px);
+      opacity: 0.7;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .timer {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+    ul li {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👑 Official trader Pankaj Bhardwaj 👑</h1>
+    <h2>ASIA'S NO 1 LOSS RECOVER KING</h2>
+
+    <!-- JOIN button with tracking -->
+    <a href="https://t.me/+zr2gB3ZoI_k5Zjc1" 
+       class="btn" 
+       onclick="fbq('track', 'Lead');">
+       ➡ JOIN NOW FOR FREE ⬅
+    </a>
+
+    <div class="timer">FREE JOINING ENDS IN... <span id="countdown">00:59</span></div>
+
+    <ul>
+      <li>📜 Asia's No 1 Best One-day Trader ⚡</li>
+      <li>📜 Highly Expert In analysing the daily trading Graph ⚡</li>
+      <li>📜 10001% FREE Reports ⚡</li>
+      <li>📜 Highly Qualified and Certified by the Sheffield Hallam University, USA ⚡</li>
+    </ul>
+
+    <!-- SUBSCRIBE button with tracking -->
+    <a href="https://t.me/+zr2gB3ZoI_k5Zjc1" 
+       class="btn" 
+       onclick="fbq('track', 'Lead');">
+       ➡ SUBSCRIBE NOW FOR FREE ⬅
+    </a>
+  </div>
+
+  <script>
+    let time = 59;
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      if (time > 0) {
+        time--;
+        let minutes = String(Math.floor(time / 60)).padStart(2, '0');
+        let seconds = String(time % 60).padStart(2, '0');
+        countdown.textContent = `${minutes}:${seconds}`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
